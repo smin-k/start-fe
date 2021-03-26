@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>source</title>
+</head>
+<body>
+
+<div id="board">
+    <!-- 이 HTML을 자바스크립트로 추가하면 됩니다.
+      <span class="black"></span>
+      <span class="white"></span>
+      <span class="black"></span>
+      <span class="white"></span>
+      <span class="white"></span>
+      <span class="black"></span>
+      <span class="white"></span>
+      <span class="black"></span>
+      <span class="black"></span>
+      <span class="white"></span>
+      <span class="black"></span>
+      <span class="white"></span>
+      <span class="white"></span>
+      <span class="black"></span>
+      <span class="white"></span>
+      <span class="black"></span>
+    //-->
+</div>
+<script>
+    var board = document.getElementById("board");  
+    color = "black"
+    board.style.width="400px"
+    var temp;
+    var temp_color="none";
+    for(var i=0; i<4; i++){
+        if(color == "black")
+                color = "white"
+            else{
+                color = "black"
+            }
+        for(var j=0; j<4; j++){
+            if(color == "black")
+                color = "white"
+            else{
+                color = "black"
+            }
+            const div = document.createElement('span');  
+            div.style.backgroundColor=color
+            div.style.width="100px"
+            div.style.height="100px"
+            div.style.display="inline-flex"
+            document.body.addEventListener('click', function(event){
+                if(temp_color !="none"){
+                    temp.style.backgroundColor=temp_color;
+                }
+                temp =event.target
+                temp_color = event.target.style.backgroundColor;
+                event.target.style.backgroundColor="red";
+            })
+            board.appendChild(div);
+            // TODO : 여기에 필요한 코드를 작성해주세요.
+        }
+    }
+</script>
+</body>
+</html>
