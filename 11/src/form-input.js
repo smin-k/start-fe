@@ -1,22 +1,25 @@
-import { render } from "./html-render";
-import todoModel from "./todo-model";
+import todoModel from './todo-model';
+import { render } from './html-render';
 
-const $inputForm = document.querySelector("#input-form");
-const $input = document.querySelector("#input");
+const $inputForm = document.querySelector('#input-form');
+const $input = document.querySelector('#input');
 
 function init(data) {
-  $inputForm.addEventListener("submit", (event) => {
-    event.preventDefault(); // form query를 서버로 넘기는 것을 막는다.
-
+  $inputForm.addEventListener('submit', (event) => {
+    event.preventDefault(); //이벤트 전달 중지
     const text = $input.value;
-    if (text === "") return;
+    if (!text) return; //데이터를 입력 하지 않으면 끊김
+    $input.value = '';
     data.push({
+      //데이터 추가
       ...todoModel,
-      text: text,
+      text,
       isDone: false,
     });
     render(data);
   });
 }
 
-export default { init };
+export default {
+  init,
+};

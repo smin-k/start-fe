@@ -1,34 +1,25 @@
-// //start...
-import { render } from "./html-render.js";
-import formInput from "./form-input.js";
+import './todo.css';
 
-import "./todos.css";
+import { render } from './html-render';
+import formInput from './form-input';
+import { loadData } from './data-manager';
 
-const todos = [
-  {
-    text: "JS공부기초",
-    isDone: true,
-  },
-  {
-    text: "JS공부고급",
-    isDone: false,
-  },
-];
+const $result = document.querySelector('#result');
 
-formInput.init(todos);
-render(todos);
+const todos = loadData();
 
-const $result = document.querySelector("#result");
-$result.addEventListener("click", (event) => {
+$result.addEventListener('click', (event) => {
   const { className } = event.target;
-  if (className == "delete") {
+  if (className === 'delete') {
     const { index } = event.target.parentElement.dataset;
     todos.splice(index, 1);
     render(todos);
-  } else if (className == "toggle-checked") {
-    console.log("hello");
+  } else if (className === 'toggle-checked') {
     const { index } = event.target.parentElement.dataset;
     todos[index].isDone = !todos[index].isDone;
     render(todos);
   }
 });
+
+formInput.init(todos);
+render(todos);

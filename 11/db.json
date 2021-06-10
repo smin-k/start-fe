@@ -1,0 +1,14 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "text": "js",
+      "isDone": false
+    },
+    {
+      "id": 2,
+      "text": "js2",
+      "isDone": false
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 export default {
-  id: "",
-  text: "",
+  id: '',
+  text: '',
   isDone: false,
 };
