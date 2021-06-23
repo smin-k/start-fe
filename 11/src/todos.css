@@ -16,7 +16,9 @@ body {
 
   font-size: 14px;
 }
-
+#root {
+  height: 100%;
+}
 .container {
   max-width: 600px;
   margin: 0 auto;
@@ -76,6 +78,7 @@ ul {
   font-size: 1em;
   border: none;
   position: relative;
+  cursor: pointer;
 }
 
 li {
