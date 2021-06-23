@@ -1,14 +1,14 @@
 console.log('app');
 
 // Create
-var todos = ['운동'];
-var todo = '게임';
+const todos = ['운동'];
+const todo = '게임';
 todos.push(todo);
 console.log(todos);
 
 // Read
 
-todos.forEach(function (todo) {
+todos.forEach((todo) => {
   console.log(todo);
 });
 
